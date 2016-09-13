@@ -5,11 +5,21 @@ Now you can do more :
 - Blur background views easily
 - Create custom filters and apply them to views backgrounds
 ###Screenshot
-
-![Screenshot](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
+![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
 
 ###Usage
-Just do the normal ui stuff
+Include in your project:
+`
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+`
+`
+`
+And first just do the normal ui stuff
 ```xml
 <RelativeLayout
      android:layout_width="match_parent" 
@@ -36,7 +46,7 @@ ViewFilter.getInstance(this)
 
 You can also implement your own  [_IRenderer_](https://github.com/mirrajabi/ViewEffects/blob/master/library/src/main/java/ir/mirrajabi/viewfilter/core/IRenderer.java) and use it as the renderer.
 #####Any contributions are welcome
-
+[![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects)
 ######[About me](https://about.me/mohammadmirrajabi)
 ######[My Website](http://mirrajabi.ir)
 
