@@ -32,12 +32,17 @@ public class ViewFilter {
         return _renderer;
     }
 
-    public void applyFilterOnView(View view, View backgroundView){
-        BitmapDrawable drawable = new BitmapDrawable(_context.getResources(),getFilteredBackgroundOfView(view, backgroundView));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            view.setBackground(drawable);
-        }
-        else view.setBackgroundDrawable(drawable);
+    public void applyFilterOnView(final View view,final View backgroundView){
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                BitmapDrawable drawable = new BitmapDrawable(_context.getResources(),getFilteredBackgroundOfView(view, backgroundView));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    view.setBackground(drawable);
+                }
+                else view.setBackgroundDrawable(drawable);
+            }
+        });
     }
 
     public Bitmap getFilteredBackgroundOfView(View view,View backgroundView){
