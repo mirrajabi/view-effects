@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "ir.mirrajabi.viewfilter"
-        minSdkVersion 1
+        minSdkVersion 4
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"

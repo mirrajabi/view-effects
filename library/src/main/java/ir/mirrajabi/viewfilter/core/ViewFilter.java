@@ -1,6 +1,5 @@
 package ir.mirrajabi.viewfilter.core;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -11,7 +10,6 @@ import android.view.View;
 import ir.mirrajabi.viewfilter.utility.ViewHelper;
 
 public class ViewFilter {
-    private int _blurRadius = 1;
     private Context _context;
     private static ViewFilter _instance = null;
     private IRenderer _renderer;
@@ -34,7 +32,6 @@ public class ViewFilter {
         return _renderer;
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void applyFilterOnView(View view, View backgroundView){
         BitmapDrawable drawable = new BitmapDrawable(_context.getResources(),getFilteredBackgroundOfView(view,backgroundView));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -45,7 +42,7 @@ public class ViewFilter {
     public Bitmap getFilteredBackgroundOfView(View view,View backgroundView){
         Bitmap screenShot = loadBitmapFromView(view, backgroundView);
         Bitmap cropped = Bitmap.createBitmap(screenShot, ViewHelper.getRelativeLeft(view),ViewHelper.getRelativeTop(view),view.getWidth(),view.getHeight());
-        return _renderer.render(cropped,_blurRadius);
+        return _renderer.render(cropped);
     }
 
     private Bitmap loadBitmapFromView(View view, View backgroundView) {
