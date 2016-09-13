@@ -5,12 +5,12 @@ Now you can do more :
 - Blur background views easily
 - Create custom filters and apply them to views backgrounds
 <br/>
-**Screenshot**
+###Screenshot
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
 
 <br/>
-**Usage**
+###Usage
 Just do the normal ui stuff
 ```xml
 <RelativeLayout
@@ -37,8 +37,8 @@ ViewFilter.getInstance(this)
 ```
 
 You can also implement your own  [_IRenderer_](https://github.com/mirrajabi/ViewEffects/blob/master/library/src/main/java/ir/mirrajabi/viewfilter/core/IRenderer.java) and use it as the renderer.
-Any contributions are welcome
-<br/>
-[About me](https://about.me/mohammadmirrajabi)
-[My Website](http://mirrajabi.ir)
+#####Any contributions are welcome
+
+######[About me](https://about.me/mohammadmirrajabi)
+######[My Website](http://mirrajabi.ir)
 
