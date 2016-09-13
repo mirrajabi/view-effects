@@ -4,9 +4,9 @@ At the beginning the only purpose was to blur all layers below.
 Now you can do more :
 - Blur background views easily
 - Create custom filters and apply them to views backgrounds
-###Screenshot
 
-![Screenshot](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
+###Screenshot
+![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
 
 ###Usage
 Just do the normal ui stuff
