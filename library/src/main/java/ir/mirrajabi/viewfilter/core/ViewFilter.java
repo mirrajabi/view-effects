@@ -33,27 +33,28 @@ public class ViewFilter {
     }
 
     public void applyFilterOnView(View view, View backgroundView){
-        BitmapDrawable drawable = new BitmapDrawable(_context.getResources(),getFilteredBackgroundOfView(view,backgroundView));
+        BitmapDrawable drawable = new BitmapDrawable(_context.getResources(),getFilteredBackgroundOfView(view, backgroundView));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             view.setBackground(drawable);
         }
         else view.setBackgroundDrawable(drawable);
     }
+
     public Bitmap getFilteredBackgroundOfView(View view,View backgroundView){
         Bitmap screenShot = loadBitmapFromView(view, backgroundView);
-        Bitmap cropped = Bitmap.createBitmap(screenShot, ViewHelper.getRelativeLeft(view),ViewHelper.getRelativeTop(view),view.getWidth(),view.getHeight());
+        Bitmap cropped = Bitmap.createBitmap(screenShot, ViewHelper.getRelativeLeft(view), ViewHelper.getRelativeTop(view),view.getMeasuredWidth(),view.getMeasuredHeight());
         return _renderer.render(cropped);
     }
 
-    private Bitmap loadBitmapFromView(View view, View backgroundView) {
+    public Bitmap loadBitmapFromView(View view, View backgroundView) {
         try {
-            if(backgroundView.getWidth() <= 0 || backgroundView.getHeight() <= 0) throw new NotInflatedException();
-            Bitmap bitmap = Bitmap.createBitmap(backgroundView.getWidth(), backgroundView.getHeight(), Bitmap.Config.ARGB_8888);
+            if(backgroundView.getMeasuredWidth() <= 0 || backgroundView.getMeasuredHeight() <= 0) throw new RuntimeException();
+            Bitmap bitmap = Bitmap.createBitmap(backgroundView.getMeasuredWidth(), backgroundView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(bitmap);
-            backgroundView.layout(-ViewHelper.getRelativeLeft(backgroundView), -ViewHelper.getRelativeTop(backgroundView), view.getLayoutParams().width, view.getLayoutParams().height);
+            backgroundView.layout(-ViewHelper.getRelativeLeft(backgroundView), -ViewHelper.getRelativeTop(backgroundView), view.getMeasuredWidth(), view.getMeasuredHeight());
             backgroundView.draw(canvas);
             return bitmap;
-        }catch (NotInflatedException e){
+        }catch (RuntimeException e){
             e.printStackTrace();
         }
         return null;
