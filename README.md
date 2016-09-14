@@ -1,6 +1,6 @@
 #View Filters
 [![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects)
----
+
 At the beginning the only purpose was to blur all layers below.
 Now you can do more :
 - Blur background views easily
