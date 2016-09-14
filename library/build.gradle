@@ -19,3 +19,28 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'viewfilters'
+
+    publishedGroupId = 'ir.mirrajabi'
+    libraryName = 'ViewFilters'
+    artifact = 'viewfilters'
+
+    libraryDescription = 'Apply custom effects on view backgrounds'
+
+    siteUrl = 'https://github.com/mirrajabi/ViewEffects'
+    gitUrl = 'https://github.com/mirrajabi/ViewEffects.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'mirrajabi'
+    developerName = 'Mohammad Mirrajabi'
+    developerEmail = 'mohammadmirrajabi@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0","MIT"]
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
