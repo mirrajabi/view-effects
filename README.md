@@ -1,5 +1,5 @@
 #View Filters
-
+[![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects)
 At the beginning the only purpose was to blur all layers below.
 Now you can do more :
 - Blur background views easily
@@ -9,6 +9,21 @@ Now you can do more :
 ![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
 
 ###Usage
+First add jitpack to your projects build.gradle file
+```	
+allprojects {
+   	repositories {
+   		...
+   		maven { url "https://jitpack.io" }
+   	}
+}
+```
+Then add the dependency in modules build.gradle file
+```
+dependencies {
+    compile 'com.github.mirrajabi:ViewEffects:1.0'
+ }
+```
 Just do the normal ui stuff
 ```xml
 <RelativeLayout
@@ -35,6 +50,12 @@ ViewFilter.getInstance(this)
 ```
 
 You can also implement your own  [_IRenderer_](https://github.com/mirrajabi/ViewEffects/blob/master/library/src/main/java/ir/mirrajabi/viewfilter/core/IRenderer.java) and use it as the renderer.
+in some situations you might want the view background to handle it yourself
+```
+ViewFilter.getInstance(this)
+          .getFilteredBackgroundOfView(findViewById(R.id.my_view),
+                                       findViewById(R.id.root_view));
+```
 #####Any contributions are welcome
 
 ######[About me](https://about.me/mohammadmirrajabi)
