@@ -21,11 +21,11 @@ dependencies {
 }
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'viewfilters'
+    bintrayName = 'ViewEffects'
 
     publishedGroupId = 'ir.mirrajabi'
-    libraryName = 'ViewFilters'
-    artifact = 'viewfilters'
+    libraryName = 'ViewEffects'
+    artifact = 'ViewEffects'
 
     libraryDescription = 'Apply custom effects on view backgrounds'
 
