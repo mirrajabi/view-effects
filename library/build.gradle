@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.mirrajabi'
-version='1.0.1'
+version='1.0'
 
 android {
     compileSdkVersion 24
@@ -24,6 +24,36 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'ViewEffects'
+                url 'https://github.com/mirrajabi/ViewEffects'
+                description 'Apply custom effects on view backgrounds'
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'mirrajabi'
+                        name 'Mohammad Mirrajabi'
+                        email 'mohammadmirrajabi@gmail.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/mirrajabi/ViewEffects.git'
+                    developerConnection 'https://github.com/mirrajabi/ViewEffects.git'
+                    url 'https://github.com/mirrajabi/ViewEffects'
+                }
+            }
+        }
+    }
+}
 
 // build a jar with source files
 task sourcesJar(type: Jar) {
