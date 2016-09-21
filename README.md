@@ -1,6 +1,6 @@
 #View Filters
-[![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects)
-
+[![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ViewEffects-green.svg?style=true)](https://android-arsenal.com/details/1/4360)
+####Any help with jitpack or any other repositories will be awesome https://github.com/mirrajabi/ViewEffects/issues/2
 At the beginning the only purpose was to blur all layers below.
 Now you can do more :
 - Blur background views easily
