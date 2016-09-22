@@ -7,7 +7,8 @@ Now you can do more :
 - Create custom filters and apply them to views backgrounds
 
 ###Screenshot
-![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
+![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)![](https://cloud.githubusercontent.com/assets/8886687/18769067/bab40082-8136-11e6-9083-90a74fc86fde.jpg)
+
 
 ###Usage
 First add jitpack to your projects build.gradle file
