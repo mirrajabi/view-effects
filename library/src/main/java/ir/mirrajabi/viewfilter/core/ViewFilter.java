@@ -52,16 +52,12 @@ public class ViewFilter {
     }
 
     public Bitmap loadBitmapFromView(View view, View backgroundView) {
-        try {
-            if(backgroundView.getMeasuredWidth() <= 0 || backgroundView.getMeasuredHeight() <= 0) throw new RuntimeException();
-            Bitmap bitmap = Bitmap.createBitmap(backgroundView.getMeasuredWidth(), backgroundView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-            backgroundView.layout(-ViewHelper.getRelativeLeft(backgroundView), -ViewHelper.getRelativeTop(backgroundView), view.getMeasuredWidth(), view.getMeasuredHeight());
-            backgroundView.draw(canvas);
-            return bitmap;
-        }catch (RuntimeException e){
-            e.printStackTrace();
-        }
-        return null;
+        if (backgroundView.getMeasuredWidth() <= 0 || backgroundView.getMeasuredHeight() <= 0)
+            throw new RuntimeException();
+        Bitmap bitmap = Bitmap.createBitmap(backgroundView.getMeasuredWidth(), backgroundView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        backgroundView.layout(-ViewHelper.getRelativeLeft(backgroundView), -ViewHelper.getRelativeTop(backgroundView), view.getMeasuredWidth(), view.getMeasuredHeight());
+        backgroundView.draw(canvas);
+        return bitmap;
     }
 }
