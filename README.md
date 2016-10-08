@@ -1,13 +1,14 @@
 #View Filters
 [![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ViewEffects-green.svg?style=true)](https://android-arsenal.com/details/1/4360)
-####Any help with jitpack or any other repositories will be awesome https://github.com/mirrajabi/ViewEffects/issues/2
+
 At the beginning the only purpose was to blur all layers below.
 Now you can do more :
 - Blur background views easily
 - Create custom filters and apply them to views backgrounds
 
 ###Screenshot
-![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)
+![](https://cloud.githubusercontent.com/assets/8886687/18458361/c1b9227c-7975-11e6-8105-84a58c37c2aa.jpg)![](https://cloud.githubusercontent.com/assets/8886687/18769067/bab40082-8136-11e6-9083-90a74fc86fde.jpg)
+
 
 ###Usage
 First add jitpack to your projects build.gradle file
@@ -22,7 +23,7 @@ allprojects {
 Then add the dependency in modules build.gradle file
 ```
 dependencies {
-    compile 'com.github.mirrajabi:ViewEffects:1.0.1'
+	  compile 'com.github.mirrajabi:ViewEffects:1.0'
  }
 ```
 Just do the normal ui stuff
