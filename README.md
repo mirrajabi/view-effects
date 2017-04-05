@@ -1,5 +1,7 @@
 # View Filters
-[![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ViewEffects-green.svg?style=true)](https://android-arsenal.com/details/1/4360)&nbsp;<a href="http://www.methodscount.com/?lib=com.github.mirrajabi%3AViewEffects%3A1.0"><img src="https://img.shields.io/badge/Methods and size-50 | 8 KB-e91e63.svg"/></a>
+[![](https://jitpack.io/v/mirrajabi/ViewEffects.svg)](https://jitpack.io/#mirrajabi/ViewEffects) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ViewEffects-green.svg?style=true)](https://android-arsenal.com/details/1/4360)&nbsp;<a href="http://www.methodscount.com/?lib=com.github.mirrajabi%3AViewEffects%3A1.0"><img src="https://img.shields.io/badge/Methods and size-50 | 8 KB-e91e63.svg"/></a> 
+
+[![CircleCI](https://circleci.com/gh/mirrajabi/ViewEffects.svg?style=svg)](https://circleci.com/gh/mirrajabi/ViewEffects)
 
 At the beginning the only purpose was to blur all layers below.
 Now you can do more :
