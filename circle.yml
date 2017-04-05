@@ -1,50 +1,26 @@
-machine:
-  timezone: Asia/Tokyo
-  java:
-    version: openjdk7
-  environment:
-    ANDROID_HOME: /usr/local/android-sdk-linux
-    INFER_HOME: /home/ubuntu/.infer/infer-linux64-v0.1.0/infer/infer
-    PATH: $INFER_HOME/bin:$PATH
-dependencies:
-  cache_directories:
-    - ~/.gradle
-    - ~/.android
-    - ~/.infer
-  pre:
-    - |
-      mkdir -p ~/.infer
-      if [ ! -e ~/.infer/infer-linux64-v0.1.0/infer/infer/bin ]; then 
-        cd ~/.infer && wget https://github.com/facebook/infer/releases/download/v0.1.0/infer-linux64-v0.1.0.tar.xz
-        tar xf infer-linux64-v0.1.0.tar.xz
-        rm infer-linux64-v0.1.0.tar.xz
-      fi  
-      
-  override:
-    - echo y | android update sdk --no-ui --filter "android-24,build-tools-24.0.2"
-    - echo y | android update sdk --no-ui --all --filter "platform-tools, tools"
-    - echo y | android update sdk --no-ui --all --filter "android-24, build-tools-24.0.2"
-    - echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
-    - echo y | android update sdk --no-ui --all --filter "extra-android-support"
-test:
-  pre:
-    # start the emulator
-    - emulator -avd circleci-android24 -no-skin -no-audio -no-window -no-boot-anim:
-        background: true
-        parallel: true
-  override:
-  
-    # run infer
-    - ./gradlew clean
-    - infer -i -- ./gradlew build
-    # wait for it to have booted
-    - circle-android wait-for-boot
-    # run tests  against the emulator.
-    - ./gradlew connectedAndroidTest
-    # run lint checker
-    - lint app --html app/build/outputs/result.html
+general:
+    artifacts:
+        - /home/ubuntu/ViewEffects/app/build/outputs/apk/
 
-    # copy results
-    - cp -r app/build/outputs $CIRCLE_ARTIFACTS
-    - cp -r app/infer-out $CIRCLE_ARTIFACTS
-    - cp -r app/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
+        GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
+
+dependencies:
+    pre:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,android-24
+        - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
+        - echo y | android update sdk --no-ui --all --filter android-24
+        - echo y | android update sdk --no-ui --all --filter tools
+        - echo y | android update sdk --no-ui --all --filter extra-android-m2repository
+        - echo y | android update sdk --no-ui --all --filter extra-android-support
+        - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
+        - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
+    override:
+        - chmod +x gradlew
+        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+
+test:
+  override:
+    - ./gradlew assembleDebug
