@@ -25,7 +25,7 @@ allprojects {
 Then add the dependency in modules build.gradle file
 ```
 dependencies {
-	  compile 'com.github.mirrajabi:ViewEffects:e355a1bac4'
+	  compile 'com.github.mirrajabi:view-effects:e355a1bac4'
  }
 ```
 Just do the normal ui stuff
